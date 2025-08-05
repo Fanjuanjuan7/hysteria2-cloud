@@ -131,3 +131,18 @@ echo "📡 协议: Hysteria2"
 echo "🔒 TLS: 开启"
 echo "🔄 证书续期: 已设置 (每周一凌晨3点)"
 echo "----------------------------------------"
+# --- 新增：生成节点信息 JSON 文件 ---
+echo "📄 正在生成节点信息文件 /root/hy2_node_info.json ..."
+cat > /root/hy2_node_info.json << JSON_EOF
+{
+  "name": "$SUBDOMAIN",
+  "type": "hysteria2",
+  "server": "$DOMAIN",
+  "port": 443,
+  "password": "$OBFS_PASSWORD",
+  "sni": "$DOMAIN",
+  "skip-cert-verify": false
+}
+JSON_EOF
+echo "✅ 节点信息文件已生成: /root/hy2_node_info.json"
+echo "💡 请将此文件内容复制到你的订阅聚合文件中。"
