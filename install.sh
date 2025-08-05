@@ -59,7 +59,7 @@ sudo apt update > /dev/null 2>&1
 sudo apt install curl wget sudo ufw certbot -y > /dev/null 2>&1
 
 echo "⬇️ 安装 Hysteria2..."
-curl -fsSL https://get.hy2.sh/ | sh > /dev/null 2>&1
+curl -fsSL https://get.hy2.sh/ | bash > /dev/null 2>&1
 
 echo "🔐 申请SSL证书..."
 sudo systemctl stop nginx > /dev/null 2>&1 || true
